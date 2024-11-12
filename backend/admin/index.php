@@ -38,6 +38,7 @@ if (isset($_POST['admin_login'])) {
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/css/style.css" rel="stylesheet" type="text/css" />
     <!--Load Sweet Alert Javascript-->
 
     <script src="assets/js/swal.js"></script>
@@ -69,7 +70,10 @@ if (isset($_POST['admin_login'])) {
 </head>
 
 <body class="">
+    <?php
 
+    include('./header.php')
+    ?>
     <div class="account-pages mt-5 mb-5">
         <div class="container">
             <div class="row justify-content-center">

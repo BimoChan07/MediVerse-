@@ -48,11 +48,11 @@
                 <li>
                     <a href="javascript: void(0);">
                         <i class="mdi mdi-pill"></i>
-                        <span> Pharmacy </span>
+                        <span> Prescription </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li>
+                        <!-- <li>
                             <a href="his_doc_add_pharm_cat.php">Add Pharm Category</a>
                         </li>
                         <li>
@@ -71,7 +71,7 @@
                         <li>
                             <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
                         </li>
-                        <hr>
+                        <hr> -->
                         <li>
                             <a href="his_doc_add_presc.php">Add Prescriptions</a>
                         </li>

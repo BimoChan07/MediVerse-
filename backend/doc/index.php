@@ -28,7 +28,7 @@ if (isset($_POST['doc_login'])) {
 
 <head>
     <meta charset="utf-8" />
-    <title>Hospital Management System -A Super Responsive Information System</title>
+    <title>MediVerse - Hospital Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="" name="description" />
     <meta content="" name="MartDevelopers" />
@@ -40,6 +40,7 @@ if (isset($_POST['doc_login'])) {
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/css/style.css" rel="stylesheet" type="text/css" />
     <!--Load Sweet Alert Javascript-->
 
     <script src="assets/js/swal.js"></script>
@@ -71,7 +72,9 @@ if (isset($_POST['doc_login'])) {
 </head>
 
 <body class="">
-
+    <?php
+    include('header.php')
+    ?>
     <div class="account-pages mt-5 mb-5">
         <div class="container">
             <div class="row justify-content-center">
