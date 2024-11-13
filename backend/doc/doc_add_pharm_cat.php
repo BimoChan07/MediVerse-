@@ -109,7 +109,7 @@ if (isset($_POST['add_pharmaceutical_category'])) {
 
                                         <div class="form-group">
                                             <label for="inputAddress" class="col-form-label">Pharmaceutical Category Description</label>
-                                            <textarea required="required" type="text" class="form-control" name="pharm_cat_desc" id="editor"></textarea>
+                                            <textarea required="required" type="text" class="form-control" name="pharm_cat_desc" rows="5"></textarea>
                                         </div>
 
                                         <button type="submit" name="add_pharmaceutical_category" class="ladda-button btn btn-success" data-style="expand-right">Add Category</button>

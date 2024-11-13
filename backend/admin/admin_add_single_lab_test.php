@@ -133,7 +133,7 @@ if (isset($_POST['add_patient_lab_test'])) {
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
-                                                <textarea required="required" type="text" class="form-control" name="lab_pat_tests" id="editor"></textarea>
+                                                <textarea required="required" type="text" class="form-control" name="lab_pat_tests" rows="5"></textarea>
                                             </div>
 
                                             <button type="submit" name="add_patient_lab_test" class="ladda-button btn btn-success" data-style="expand-right">Add Laboratory Test</button>

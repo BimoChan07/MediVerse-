@@ -64,14 +64,14 @@ while ($row = $res->fetch_object()) {
 
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="admin_dashboard.php" class="logo text-center">
+            <a href=".admin_dashboard.php" class="logo text-center">
                 <span class="logo-lg">
-                    <img src="../images/mediversewhite.png" alt="" height="18">
-                    <!-- <span class="logo-lg-text-light">UBold</span> -->
+                    <!-- <img src="../images/mediverse white.png" alt="" class="w-100"> -->
+                    <span class="logo-lg-text-light">MediVerse</span>
                 </span>
                 <span class="logo-sm">
-                    <!-- <span class="logo-sm-text-dark">U</span> -->
-                    <img src="../images/mediversewhite.png" alt="" height="24">
+                    <span class="logo-sm-text-light text-light">MV</span>
+                    <!-- <img src="../images/mediverse white.png" alt="" height="" width="100%"> -->
                 </span>
             </a>
         </div>

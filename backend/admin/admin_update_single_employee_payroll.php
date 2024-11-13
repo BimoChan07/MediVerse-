@@ -136,7 +136,7 @@ if (isset($_POST['update_payroll'])) {
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Payroll Description</label>
-                                                <textarea type="text" class="form-control" name="pay_descr" id="editor"> <?php echo $row->pay_descr; ?></textarea>
+                                                <textarea type="text" class="form-control" name="pay_descr"> <?php echo $row->pay_descr; ?></textarea>
                                             </div>
 
                                             <button type="submit" name="update_payroll" class="ladda-button btn btn-primary" data-style="expand-right">Update Payroll Record</button>

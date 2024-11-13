@@ -102,7 +102,7 @@ if (isset($_POST['update_pharmaceutical'])) {
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Pharmaceutical Description</label>
-                                                <textarea required="required" type="text" class="form-control" name="phar_desc" id="editor"><?php echo $row->phar_desc; ?></textarea>
+                                                <textarea required="required" type="text" class="form-control" name="phar_desc" rows="5"><?php echo $row->phar_desc; ?></textarea>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">

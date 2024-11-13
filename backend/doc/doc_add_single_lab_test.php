@@ -7,13 +7,14 @@ if (isset($_POST['add_patient_lab_test'])) {
     $lab_pat_number  = $_POST['lab_pat_number'];
     $lab_pat_tests = $_POST['lab_pat_tests'];
     $lab_number  = $_POST['lab_number'];
+    $reported_by  = $_POST['reported_by'];
     //$pres_number = $_POST['pres_number'];
     //$pres_ins = $_POST['pres_ins'];
     //$pres_pat_ailment = $_POST['pres_pat_ailment'];
     //sql to insert captured values
-    $query = "INSERT INTO  laboratory  (lab_pat_name, lab_pat_ailment, lab_pat_number, lab_pat_tests, lab_number ) VALUES(?,?,?,?,?)";
+    $query = "INSERT INTO  laboratory  (lab_pat_name, lab_pat_ailment, lab_pat_number, lab_pat_tests, lab_number, reported_by ) VALUES(?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssss', $lab_pat_name, $lab_pat_ailment, $lab_pat_number, $lab_pat_tests, $lab_number);
+    $rc = $stmt->bind_param('ssssss', $lab_pat_name, $lab_pat_ailment, $lab_pat_number, $lab_pat_tests, $lab_number, $reported_by);
     $stmt->execute();
     /*
 			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
@@ -132,9 +133,12 @@ if (isset($_POST['add_patient_lab_test'])) {
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
-                                                <textarea required="required" type="text" class="form-control" name="lab_pat_tests" id="editor"></textarea>
+                                                <textarea required="required" type="text" class="form-control" name="lab_pat_tests" rows="5"></textarea>
                                             </div>
-
+                                            <div class="form-group">
+                                                <label for="inputAddress" class="col-form-label">Reported By</label>
+                                                <textarea required="required" type="text" class="form-control" name="reported_by" id="" rows="1"></textarea>
+                                            </div>
                                             <button type="submit" name="add_patient_lab_test" class="ladda-button btn btn-success" data-style="expand-right">Add Laboratory Test</button>
 
                                         </form>

@@ -118,7 +118,7 @@ if (isset($_POST['add_equipments'])) {
 
                                         <div class="form-group" style="style:display-none">
                                             <label for="inputAddress" class="col-form-label">Pharmaceutical Category Description</label>
-                                            <textarea required="required" type="text" class="form-control" name="eqp_desc" id="editor"></textarea>
+                                            <textarea required="required" type="text" class="form-control" name="eqp_desc" id="" rows="5"></textarea>
                                         </div>
 
                                         <button type="submit" name="add_equipments" class="ladda-button btn btn-success" data-style="expand-right">Add Equipment</button>

@@ -114,7 +114,7 @@ if (isset($_POST['add_vendor'])) {
 
                                         <div class="form-group">
                                             <label for="inputAddress" class="col-form-label">Vendor Details</label>
-                                            <textarea type="text" class="form-control" name="v_desc" id="editor"></textarea>
+                                            <textarea type="text" class="form-control" name="v_desc" rows="5"></textarea>
                                         </div>
 
                                         <button type="submit" name="add_vendor" class="ladda-button btn btn-success" data-style="expand-right">Add Vendor</button>

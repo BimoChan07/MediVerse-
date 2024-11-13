@@ -24,9 +24,9 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li>
+                        <!-- <li>
                             <a href="admin_register_patient.php">Register Patient</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="admin_view_patients.php">View Patients</a>
                         </li>
@@ -88,10 +88,9 @@
                         </li>
                         <hr> -->
 
-                        <hr>
-                        <li>
+                        <!-- <li>
                             <a href="admin_add_presc.php">Add Prescriptions</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="admin_view_presc.php">View Prescriptions</a>
                         </li>
@@ -178,7 +177,7 @@
                             <a href="admin_outpatient_records.php">OutPatient Records</a>
                         </li>
                         <li>
-                            <a href="admin_employee_records.php">Employee Records</a>
+                            <a href="admin_employee_records.php">Doctor Records</a>
                         </li>
                         <li>
                             <a href="admin_pharmaceutical_records.php">Pharmaceutical Records</a>
@@ -303,7 +302,7 @@
 
                     </ul>
                 </li> -->
-                <li>
+                <!-- <li>
                     <a href="javascript: void(0);">
                         <i class="fas fa-lock"></i>
                         <span> Password Resets </span>
@@ -315,7 +314,7 @@
                         </li>
 
                     </ul>
-                </li>
+                </li> -->
 
             </ul>
 

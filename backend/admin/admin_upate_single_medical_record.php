@@ -140,7 +140,7 @@ if (isset($_POST['update_patient_mdr'])) {
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Patient's Prescription</label>
-                                                <textarea required="required" type="text" class="form-control" name="mdr_pat_prescr" id="editor"><?php echo $row->mdr_pat_prescr; ?> </textarea>
+                                                <textarea required="required" type="text" class="form-control" name="mdr_pat_prescr" rows="5"><?php echo $row->mdr_pat_prescr; ?> </textarea>
                                             </div>
                                         <?php } ?>
 

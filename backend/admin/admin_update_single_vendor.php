@@ -116,7 +116,7 @@ if (isset($_POST['update_vendor'])) {
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Vendor Details</label>
-                                                <textarea type="text" class="form-control" name="v_desc" id="editor"><?php echo $row->v_desc; ?></textarea>
+                                                <textarea type="text" class="form-control" name="v_desc" rows="5"><?php echo $row->v_desc; ?></textarea>
                                             </div>
 
                                             <button type="submit" name="update_vendor" class="ladda-button btn btn-success" data-style="expand-right">Update Vendor</button>

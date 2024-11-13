@@ -108,11 +108,12 @@ if (isset($_POST['assaign_dept'])) {
                                                 <label for="inputState" class="col-form-label">Departments</label>
                                                 <select id="inputState" required="required" name="doc_dept" class="form-control">
                                                     <option>Choose</option>
-                                                    <option>Patient Registration</option>
-                                                    <option>Laboratory</option>
-                                                    <option>Pharmacy</option>
-                                                    <option>Accounting</option>
-                                                    <option>Surgery | Theatre</option>
+                                                    <option>Cardiology</option>
+                                                    <option>Radiology</option>
+                                                    <option>Orthopedic</option>
+                                                    <option>Neurology</option>
+                                                    <option>Gynecology</option>
+                                                    <option>Anesthesiology</option>
                                                 </select>
                                             </div>
 

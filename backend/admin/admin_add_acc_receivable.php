@@ -105,7 +105,7 @@ if (isset($_POST['add_acc'])) {
 
                                         <div class="form-group ">
                                             <label for="inputPassword4" class="col-form-label">Account Description</label>
-                                            <textarea required="required" type="text" name="acc_desc" class="form-control" id="editor"></textarea>
+                                            <textarea required="required" type="text" name="acc_desc" class="form-control" id="" rows="3"></textarea>
                                         </div>
 
                                         <div class="form-group" style="display:none">

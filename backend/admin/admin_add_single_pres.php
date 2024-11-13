@@ -145,7 +145,7 @@ if (isset($_POST['add_patient_presc'])) {
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Prescription</label>
-                                                <textarea required="required" type="text" class="form-control" name="pres_ins" id="editor"></textarea>
+                                                <textarea required="required" type="text" class="form-control" name="pres_ins" rows="5"></textarea>
                                             </div>
 
                                             <button type="submit" name="add_patient_presc" class="ladda-button btn btn-primary" data-style="expand-right">Add Patient Prescription</button>

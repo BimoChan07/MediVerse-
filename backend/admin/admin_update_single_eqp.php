@@ -123,7 +123,7 @@ if (isset($_POST['update_equipments'])) {
 
                                             <div class="form-group" style="style:display-none">
                                                 <label for="inputAddress" class="col-form-label">Pharmaceutical Category Description</label>
-                                                <textarea required="required" type="text" class="form-control" name="eqp_desc" id="editor"><?php echo $row->eqp_desc; ?></textarea>
+                                                <textarea required="required" type="text" class="form-control" name="eqp_desc" rows="5"><?php echo $row->eqp_desc; ?></textarea>
                                             </div>
 
                                             <button type="submit" name="update_equipments" class="ladda-button btn btn-success" data-style="expand-right">Update Equipment</button>

@@ -11,7 +11,7 @@ if (isset($_POST['add_patient_lab_result'])) {
     //$pres_ins = $_POST['pres_ins'];
     //$pres_pat_ailment = $_POST['pres_pat_ailment'];
     //sql to insert captured values
-    $query = "UPDATE   laboratory  SET lab_pat_name=?, lab_pat_ailment=?, lab_pat_number=?, lab_pat_tests=?, lab_pat_results=? WHERE  lab_number = ? ";
+    $query = "UPDATE  laboratory  SET lab_pat_name=?, lab_pat_ailment=?, lab_pat_number=?, lab_pat_tests=?, lab_pat_results= ? WHERE  lab_number = ? ";
     $stmt = $mysqli->prepare($query);
     $rc = $stmt->bind_param('ssssss', $lab_pat_name, $lab_pat_ailment, $lab_pat_number, $lab_pat_tests, $lab_pat_results, $lab_number);
     $stmt->execute();
@@ -115,19 +115,19 @@ if (isset($_POST['add_patient_lab_result'])) {
 
                                             </div>
 
-
                                             <hr>
 
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
-                                                <textarea required="required" type="text" class="form-control" name="lab_pat_tests" id="editor"><?php echo $row->lab_pat_tests; ?></textarea>
+                                                <textarea required="required" type="text" class="form-control" name="lab_pat_tests" id="" rows="5"><?php echo $row->lab_pat_tests; ?></textarea>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Laboratory Result</label>
-                                                <textarea required="required" type="text" class="form-control" name="lab_pat_results" id="editor1"></textarea>
+                                                <textarea required="required" type="text" class="form-control" name="lab_pat_results" id="" rows="5"></textarea>
                                             </div>
+
 
                                             <button type="submit" name="add_patient_lab_result" class="ladda-button btn btn-success" data-style="expand-right">Add Laboratory Result</button>
 
@@ -136,6 +136,8 @@ if (isset($_POST['add_patient_lab_result'])) {
                                     </div> <!-- end card-body -->
                                 </div> <!-- end card-->
                             </div> <!-- end col -->
+                            <hr>
+
                         </div>
                         <!-- end row -->
 
