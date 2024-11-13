@@ -4,7 +4,7 @@ include('assets/inc/config.php'); //get configuration file
 if (isset($_POST['admin_login'])) {
     $ad_email = $_POST['ad_email'];
     $ad_pwd = sha1(md5($_POST['ad_pwd'])); //double encrypt to increase security
-    $stmt = $mysqli->prepare("SELECT ad_email ,ad_pwd , ad_id FROM his_admin WHERE ad_email=? AND ad_pwd=? "); //sql to log in user
+    $stmt = $mysqli->prepare("SELECT ad_email ,ad_pwd , ad_id FROM admin WHERE ad_email=? AND ad_pwd=? "); //sql to log in user
     $stmt->bind_param('ss', $ad_email, $ad_pwd); //bind fetched parameters
     $stmt->execute(); //execute bind
     $stmt->bind_result($ad_email, $ad_pwd, $ad_id); //bind result
@@ -13,7 +13,7 @@ if (isset($_POST['admin_login'])) {
     //$uip=$_SERVER['REMOTE_ADDR'];
     //$ldate=date('d/m/Y h:i:s', time());
     if ($rs) { //if its sucessfull
-        header("location:his_admin_dashboard.php");
+        header("location:admin_dashboard.php");
     } else {
         #echo "<script>alert('Access Denied Please Check Your Credentials');</script>";
         $err = "Access Denied Please Check Your Credentials";
@@ -135,8 +135,8 @@ if (isset($_POST['admin_login'])) {
 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
-                            <p class="mb-0"> <a href="his_admin_pwd_reset.php" class="text-primary ml-1">Forgot your password?</a></p>
-                            <!-- <p class="text-white-50">Don't have an account? <a href="his_admin_register.php" class="text-white ml-1"><b>Sign Up</b></a></p>-->
+                            <p class="mb-0"> <a href="admin_pwd_reset.php" class="text-primary ml-1">Forgot your password?</a></p>
+                            <!-- <p class="text-white-50">Don't have an account? <a href="admin_register.php" class="text-white ml-1"><b>Sign Up</b></a></p>-->
                         </div> <!-- end col -->
                     </div>
                     <!-- end row -->

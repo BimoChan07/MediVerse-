@@ -1,7 +1,6 @@
 <?php
-$dbuser="root";
-$dbpass="";
-$host="localhost";
-$db="hmisphp";
-$mysqli=new mysqli($host,$dbuser, $dbpass, $db);
-?>
+$dbuser = "root";
+$dbpass = "";
+$host = "localhost";
+$db = "mediverse";
+$mysqli = new mysqli($host, $dbuser, $dbpass, $db);

@@ -10,7 +10,7 @@
                 <li class="menu-title">Navigation</li>
 
                 <li>
-                    <a href="his_doc_dashboard.php">
+                    <a href="doc_dashboard.php">
                         <i class="fe-airplay"></i>
                         <span> Dashboard </span>
                     </a>
@@ -25,20 +25,20 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a href="his_doc_register_patient.php">Register Patient</a>
+                            <a href="doc_register_patient.php">Register Patient</a>
                         </li>
                         <li>
-                            <a href="his_doc_view_patients.php">View Patients</a>
+                            <a href="doc_view_patients.php">View Patients</a>
                         </li>
                         <li>
-                            <a href="his_doc_manage_patient.php">Manage Patients</a>
+                            <a href="doc_manage_patient.php">Manage Patients</a>
                         </li>
                         <hr>
                         <!-- <li>
-                                        <a href="his_doc_discharge_patient.php">Discharge Patients</a>
+                                        <a href="doc_discharge_patient.php">Discharge Patients</a>
                                     </li> -->
                         <li>
-                            <a href="his_doc_patient_transfer.php">Patient Transfers</a>
+                            <a href="doc_patient_transfer.php">Patient Transfers</a>
                         </li>
                     </ul>
                 </li>
@@ -53,33 +53,33 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <!-- <li>
-                            <a href="his_doc_add_pharm_cat.php">Add Pharm Category</a>
+                            <a href="doc_add_pharm_cat.php">Add Pharm Category</a>
                         </li>
                         <li>
-                            <a href="his_doc_view_pharm_cat.php">View Pharm Category</a>
+                            <a href="doc_view_pharm_cat.php">View Pharm Category</a>
                         </li>
                         <li>
-                            <a href="his_doc_manage_pharm_cat.php">Manage Pharm Category</a>
+                            <a href="doc_manage_pharm_cat.php">Manage Pharm Category</a>
                         </li>
                         <hr>
                         <li>
-                            <a href="his_doc_add_pharmaceuticals.php">Add Pharmaceuticals</a>
+                            <a href="doc_add_pharmaceuticals.php">Add Pharmaceuticals</a>
                         </li>
                         <li>
-                            <a href="his_doc_view_pharmaceuticals.php">View Pharmaceuticals</a>
+                            <a href="doc_view_pharmaceuticals.php">View Pharmaceuticals</a>
                         </li>
                         <li>
-                            <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
+                            <a href="doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
                         </li>
                         <hr> -->
                         <li>
-                            <a href="his_doc_add_presc.php">Add Prescriptions</a>
+                            <a href="doc_add_presc.php">Add Prescriptions</a>
                         </li>
                         <li>
-                            <a href="his_doc_view_presc.php">View Prescriptions</a>
+                            <a href="doc_view_presc.php">View Prescriptions</a>
                         </li>
                         <li>
-                            <a href="his_doc_manage_presc.php">Manage Prescriptions</a>
+                            <a href="doc_manage_presc.php">Manage Prescriptions</a>
                         </li>
                     </ul>
                 </li>
@@ -94,11 +94,11 @@
                     <ul class="nav-second-level" aria-expanded="false">
 
                         <li>
-                            <a href="his_doc_pharm_inventory.php">Pharmaceuticals</a>
+                            <a href="doc_pharm_inventory.php">Pharmaceuticals</a>
                         </li>
 
                         <li>
-                            <a href="his_doc_equipments_inventory.php">Assets</a>
+                            <a href="doc_equipments_inventory.php">Assets</a>
                         </li>
 
                     </ul>
@@ -112,17 +112,17 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a href="his_doc_patient_lab_test.php">Patient Lab Tests</a>
+                            <a href="doc_patient_lab_test.php">Patient Lab Tests</a>
                         </li>
                         <li>
-                            <a href="his_doc_patient_lab_result.php">Patient Lab Results</a>
+                            <a href="doc_patient_lab_result.php">Patient Lab Results</a>
                         </li>
                         <li>
-                            <a href="his_doc_patient_lab_vitals.php">Patient Vitals</a>
+                            <a href="doc_patient_lab_vitals.php">Patient Vitals</a>
                         </li>
 
                         <li>
-                            <a href="his_doc_lab_report.php">Lab Reports</a>
+                            <a href="doc_lab_report.php">Lab Reports</a>
                         </li>
                         <hr>
 
@@ -138,7 +138,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
 
                         <li>
-                            <a href="his_doc_view_payrolls.php">My Payrolls</a>
+                            <a href="doc_view_payrolls.php">My Payrolls</a>
                         </li>
                     </ul>
                 </li>

@@ -1,7 +1,7 @@
 <?php
 $doc_id = $_SESSION['doc_id'];
 $doc_number = $_SESSION['doc_number'];
-$ret = "SELECT * FROM  his_docs WHERE doc_id = ? AND doc_number = ?";
+$ret = "SELECT * FROM  docs WHERE doc_id = ? AND doc_number = ?";
 $stmt = $mysqli->prepare($ret);
 $stmt->bind_param('is', $doc_id, $doc_number);
 $stmt->execute(); //ok
@@ -27,7 +27,6 @@ while ($row = $res->fetch_object()) {
                 </form>
             </li>
 
-
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <img src="assets/images/users/<?php echo $row->doc_dpic; ?>" alt="dpic" class="rounded-circle">
@@ -42,12 +41,12 @@ while ($row = $res->fetch_object()) {
                     </div>
 
                     <!-- item-->
-                    <!-- <a href="his_doc_account.php" class="dropdown-item notify-item">
+                    <!-- <a href="doc_account.php" class="dropdown-item notify-item">
                         <i class="fas fa-user"></i>
                         <span>My Account</span>
                     </a> -->
 
-                    <a href="his_doc_update-account.php" class="dropdown-item notify-item">
+                    <a href="doc_update-account.php" class="dropdown-item notify-item">
                         <i class="fas fa-user-tag"></i>
                         <span>Update Account</span>
                     </a>
@@ -56,7 +55,7 @@ while ($row = $res->fetch_object()) {
                     <div class="dropdown-divider"></div>
 
                     <!-- item-->
-                    <a href="his_doc_logout_partial.php" class="dropdown-item notify-item">
+                    <a href="doc_logout_partial.php" class="dropdown-item notify-item">
                         <i class="fe-log-out"></i>
                         <span>Logout</span>
                     </a>
@@ -70,14 +69,14 @@ while ($row = $res->fetch_object()) {
 
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="his_admin_dashboard.php" class="logo text-center">
+            <a href=".admin_dashboard.php" class="logo text-center">
                 <span class="logo-lg">
-                    <img src="assets/images/mediversewhite.png" alt="" height="18">
+                    <img src="../images/mediverse white.png" alt="" class="w-100">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
                 </span>
                 <span class="logo-sm">
                     <!-- <span class="logo-sm-text-dark">U</span> -->
-                    <img src="assets/images/mediversewhite.png" alt="" height="24">
+                    <img src="../images/mediverse white.png" alt="" height="24" width="100%">
                 </span>
             </a>
         </div>
@@ -98,7 +97,7 @@ while ($row = $res->fetch_object()) {
 
 
                     <!-- item-->
-                    <a href="his_doc_register_patient.php" class="dropdown-item">
+                    <a href="doc_register_patient.php" class="dropdown-item">
                         <i class="fe-activity mr-1"></i>
                         <span>Patient</span>
                     </a>
@@ -106,7 +105,7 @@ while ($row = $res->fetch_object()) {
 
 
                     <!-- item-->
-                    <a href="his_doc_lab_report.php" class="dropdown-item">
+                    <a href="doc_lab_report.php" class="dropdown-item">
                         <i class="fe-hard-drive mr-1"></i>
                         <span>Laboratory Report</span>
                     </a>

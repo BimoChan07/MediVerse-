@@ -5,7 +5,7 @@ if (isset($_POST['doc_login'])) {
     $doc_number = $_POST['doc_number'];
     //$doc_email = $_POST['doc_ea']
     $doc_pwd = sha1(md5($_POST['doc_pwd'])); //double encrypt to increase security
-    $stmt = $mysqli->prepare("SELECT doc_number, doc_pwd, doc_id FROM his_docs WHERE  doc_number=? AND doc_pwd=? "); //sql to log in user
+    $stmt = $mysqli->prepare("SELECT doc_number, doc_pwd, doc_id FROM docs WHERE  doc_number=? AND doc_pwd=? "); //sql to log in user
     $stmt->bind_param('ss', $doc_number, $doc_pwd); //bind fetched parameters
     $stmt->execute(); //execute bind
     $stmt->bind_result($doc_number, $doc_pwd, $doc_id); //bind result
@@ -15,7 +15,7 @@ if (isset($_POST['doc_login'])) {
     //$uip=$_SERVER['REMOTE_ADDR'];
     //$ldate=date('d/m/Y h:i:s', time());
     if ($rs) { //if its sucessfull
-        header("location:his_doc_dashboard.php");
+        header("location:doc_dashboard.php");
     } else {
         #echo "<script>alert('Access Denied Please Check Your Credentials');</script>";
         $err = "Access Denied Please Check Your Credentials";
@@ -135,8 +135,8 @@ if (isset($_POST['doc_login'])) {
 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
-                            <p> <a href="his_doc_reset_pwd.php" class="text-white-50 ml-1">Forgot your password?</a></p>
-                            <!-- <p class="text-white-50">Don't have an account? <a href="his_admin_register.php" class="text-white ml-1"><b>Sign Up</b></a></p>-->
+                            <p> <a href="doc_reset_pwd.php" class="text-white-50 ml-1">Forgot your password?</a></p>
+                            <!-- <p class="text-white-50">Don't have an account? <a href="admin_register.php" class="text-white ml-1"><b>Sign Up</b></a></p>-->
                         </div> <!-- end col -->
                     </div>
                     <!-- end row -->

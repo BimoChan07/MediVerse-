@@ -2,6 +2,6 @@
 $dbuser="root";
 $dbpass="";
 $host="localhost";
-$db="hmisphp";
+$db="mediverse";
 $mysqli=new mysqli($host,$dbuser, $dbpass, $db);
 ?>
