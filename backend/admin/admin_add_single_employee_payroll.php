@@ -114,7 +114,7 @@ if (isset($_POST['add_payroll'])) {
                                             <div class="form-row">
 
                                                 <div class="form-group col-md-12">
-                                                    <label for="inputEmail4" class="col-form-label">Employee Salary ($)</label>
+                                                    <label for="inputEmail4" class="col-form-label">Employee Salary (Rs)</label>
                                                     <input type="text" required="required" name="pay_emp_salary" class="form-control" id="inputEmail4">
                                                 </div>
 

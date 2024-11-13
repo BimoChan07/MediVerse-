@@ -89,7 +89,7 @@ $_token = substr(str_shuffle('0123456789QWERTYUIOPPLKJHGFDSAZCVBNMqwertyuioplkjh
 
                             <div class="text-center w-75 m-auto">
                                 <a href="doc_reset_pwd.php">
-                                    <span><img src="assets/images/logo-dark.png" alt="" height="22"></span>
+                                    <span><img src="assets/images/mediverse.png" alt="" height="100"></span>
                                 </a>
                                 <p class="text-muted mb-4 mt-3">Enter your email address and we'll send you an email with instructions to reset your password.</p>
                             </div>

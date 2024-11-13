@@ -89,7 +89,7 @@ if (isset($_POST['add_acc'])) {
                                                 <input type="text" required="required" name="acc_name" class="form-control" id="inputEmail4">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="inputEmail4" class="col-form-label">Account Amount($)</label>
+                                                <label for="inputEmail4" class="col-form-label">Account Amount(Rs)</label>
                                                 <input type="text" required="required" name="acc_amount" class="form-control" id="inputEmail4">
                                             </div>
                                         </div>

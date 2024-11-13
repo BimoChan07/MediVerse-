@@ -108,10 +108,10 @@ while ($row = $res->fetch_object()) {
                     </a>
 
                     <!-- item-->
-                    <a href="admin_add_vendor.php" class="dropdown-item">
+                    <!-- <a href="admin_add_vendor.php" class="dropdown-item">
                         <i class="fe-shopping-cart mr-1"></i>
                         <span>Vendor</span>
-                    </a>
+                    </a> -->
 
 
                     <!-- item-->
@@ -127,10 +127,10 @@ while ($row = $res->fetch_object()) {
                     </a>
 
                     <!-- item-->
-                    <a href="admin_surgery_records.php" class="dropdown-item">
+                    <!-- <a href="admin_surgery_records.php" class="dropdown-item">
                         <i class="fe-anchor mr-1"></i>
                         <span>Surgical/Theatre Report</span>
-                    </a>
+                    </a> -->
 
 
                     <div class="dropdown-divider"></div>

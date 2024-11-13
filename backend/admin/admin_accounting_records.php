@@ -101,7 +101,7 @@ $aid = $_SESSION['ad_id'];
                                                     <td><?php echo $cnt; ?></td>
                                                     <td><?php echo $row->acc_name; ?></td>
                                                     <td><?php echo $row->acc_number; ?></td>
-                                                    <td>$ <?php echo $row->acc_amount; ?></td>
+                                                    <td>Rs. <?php echo $row->acc_amount; ?></td>
                                                     <td><?php echo $row->acc_type; ?></td>
                                                     <td>
                                                         <a href="admin_view_single_account.php?acc_number=<?php echo $row->acc_number; ?>" class="badge badge-success"><i class="fas fa-eye "></i> View</a>

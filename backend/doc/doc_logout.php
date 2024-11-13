@@ -30,7 +30,7 @@
 
                             <div class="text-center w-75 m-auto">
                                 <a href="admin_logout.php">
-                                    <span><img src="assets/images/mediverse.png" alt="" height="22"></span>
+                                    <span><img src="assets/images/mediverse.png" alt="" height="100"></span>
                                 </a>
                             </div>
 

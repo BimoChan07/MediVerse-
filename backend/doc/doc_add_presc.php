@@ -113,6 +113,7 @@ $doc_id = $_SESSION['doc_id'];
 
                                                     <td><a href="doc_add_single_pres.php?pat_number=<?php echo $row->pat_number; ?>" class="badge badge-success"><i class="fas fa-highlighter "></i> Add Prescription</a></td>
                                                 </tr>
+
                                             </tbody>
                                         <?php $cnt = $cnt + 1;
                                         } ?>

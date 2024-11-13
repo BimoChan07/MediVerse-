@@ -98,7 +98,7 @@ if (isset($_POST['update_acc'])) {
                                                     <input type="text" required="required" value="<?php echo $row->acc_name; ?>" name="acc_name" class="form-control" id="inputEmail4">
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="inputEmail4" class="col-form-label">Account Amount($)</label>
+                                                    <label for="inputEmail4" class="col-form-label">Account Amount(Rs)</label>
                                                     <input type="text" required="required" value="<?php echo $row->acc_amount; ?>" name="acc_amount" class="form-control" id="inputEmail4">
                                                 </div>
                                             </div>

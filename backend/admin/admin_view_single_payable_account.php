@@ -80,7 +80,7 @@ $aid = $_SESSION['ad_id'];
                                                 <hr>
                                                 <h4 class="text-danger"> Account Name : <?php echo $row->acc_name; ?></h6>
                                                     <hr>
-                                                    <h4 class="text-danger">Account Amount : $ <?php echo $row->acc_amount; ?> </h6>
+                                                    <h4 class="text-danger">Account Amount : Rs. <?php echo $row->acc_amount; ?> </h6>
                                                         <hr>
                                                         <h4 class="align-centre">Account Description</h6>
                                                             <hr>

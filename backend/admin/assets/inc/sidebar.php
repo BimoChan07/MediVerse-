@@ -72,11 +72,12 @@
                 <li>
                     <a href="javascript: void(0);">
                         <i class="mdi mdi-pill"></i>
-                        <span> Pharmacy </span>
+                        <span> Prescription </span>
                         <span class="menu-arrow"></span>
                     </a>
+
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li>
+                        <!-- <li>
                             <a href="admin_add_pharm_cat.php">Add Pharm Category</a>
                         </li>
                         <li>
@@ -85,16 +86,8 @@
                         <li>
                             <a href="admin_manage_pharm_cat.php">Manage Pharm Category</a>
                         </li>
-                        <hr>
-                        <li>
-                            <a href="admin_add_pharmaceuticals.php">Add Pharmaceuticals</a>
-                        </li>
-                        <li>
-                            <a href="admin_view_pharmaceuticals.php">View Pharmaceuticals</a>
-                        </li>
-                        <li>
-                            <a href="admin_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
-                        </li>
+                        <hr> -->
+
                         <hr>
                         <li>
                             <a href="admin_add_presc.php">Add Prescriptions</a>
@@ -104,6 +97,25 @@
                         </li>
                         <li>
                             <a href="admin_manage_presc.php">Manage Prescriptions</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);">
+                        <i class="mdi mdi-pill"></i>
+                        <span> Pharmaceuticals </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a href="admin_add_pharmaceuticals.php">Add Pharmaceuticals</a>
+                        </li>
+                        <li>
+                            <a href="admin_view_pharmaceuticals.php">View Pharmaceuticals</a>
+                        </li>
+                        <li>
+                            <a href="admin_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
                         </li>
                     </ul>
                 </li>
@@ -220,17 +232,17 @@
                         <li>
                             <a href="admin_lab_report.php">Lab Reports</a>
                         </li>
-                        <hr>
+                        <!-- <hr>
                         <li>
                             <a href="admin_add_lab_equipment.php">Add Lab Equipment</a>
                         </li>
                         <li>
                             <a href="admin_manage_lab_equipment.php">Manage Lab Equipments</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
 
-                <li>
+                <!-- <li>
                     <a href="javascript: void(0);">
                         <i class="mdi mdi-scissors-cutting "></i>
                         <span> Surgical / Theatre </span>
@@ -254,7 +266,7 @@
                             <a href="admin_surgery_records.php">Surgery Records</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
                 <li>
                     <a href="javascript: void(0);">
@@ -275,7 +287,7 @@
                     </ul>
                 </li>
 
-                <li>
+                <!-- <li>
                     <a href="javascript: void(0);">
                         <i class="fas fa-user-tag"></i>
                         <span> Vendors </span>
@@ -290,7 +302,7 @@
                         </li>
 
                     </ul>
-                </li>
+                </li> -->
                 <li>
                     <a href="javascript: void(0);">
                         <i class="fas fa-lock"></i>

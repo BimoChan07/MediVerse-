@@ -16,17 +16,9 @@ $aid = $_SESSION['ad_id'];
     <!-- Begin page -->
     <div id="wrapper">
 
-        <!-- Topbar Start -->
         <?php include('assets/inc/nav.php'); ?>
-        <!-- end Topbar -->
 
-        <!-- ========== Left Sidebar Start ========== -->
         <?php include('assets/inc/sidebar.php'); ?>
-        <!-- Left Sidebar End -->
-
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
 
         <div class="content-page">
             <div class="content">
@@ -39,7 +31,7 @@ $aid = $_SESSION['ad_id'];
                         <div class="col-12">
                             <div class="page-title-box">
 
-                                <h4 class="page-title">Hospital Management System Dashboard</h4>
+                                <h4 class="page-title font-weight-bold" style="color:#024a59">MediVerse - Hospital Management System</h4>
                             </div>
                         </div>
                     </div>

@@ -71,7 +71,7 @@ $aid = $_SESSION['ad_id'];
                                     <!-- Logo & title -->
                                     <div class="clearfix">
                                         <div class="float-left">
-                                            <img src="assets/images/logo-dark.png" alt="" height="20">
+                                            <img src="assets/images/mediverse.png" alt="" height="100">
                                         </div>
                                         <div class="float-right">
                                             <h4 class="m-0 d-print-none"><?php echo $row->pay_doc_name; ?> Payroll</h4>
@@ -150,10 +150,10 @@ $aid = $_SESSION['ad_id'];
                                                                 //get total salary after tax reduction
                                                                 $total_salary = $salary - $taxable_salary;
                                                             ?>
-                                                                <td>$ <?php echo $row->pay_emp_salary; ?></td>
+                                                                <td>Rs. <?php echo $row->pay_emp_salary; ?></td>
                                                                 <td>16%</td>
 
-                                                                <td class="text-right">$ <?php echo $taxable_salary; ?></td>
+                                                                <td class="text-right">Rs. <?php echo $taxable_salary; ?></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -174,9 +174,9 @@ $aid = $_SESSION['ad_id'];
                                         </div> <!-- end col -->
                                         <div class="col-sm-6">
                                             <div class="float-right">
-                                                <p><b>Sub-total:</b> <span class="float-right">$ <?php echo $row->pay_emp_salary; ?></span></p>
+                                                <p><b>Sub-total:</b> <span class="float-right">Rs. <?php echo $row->pay_emp_salary; ?></span></p>
                                                 <p><b>PAYE Tax (16%) :</b> <span class="float-right"> &nbsp;&nbsp;&nbsp; <?php echo $taxable_salary; ?> </span></p>
-                                                <h3>$ <?php echo $total_salary; ?></h3>
+                                                <h3>Rs. <?php echo $total_salary; ?></h3>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div> <!-- end col -->

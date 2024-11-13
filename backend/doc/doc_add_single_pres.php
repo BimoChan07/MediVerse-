@@ -9,11 +9,11 @@ if (isset($_POST['add_patient_presc'])) {
     $pres_pat_age = $_POST['pres_pat_age'];
     $pres_number = $_POST['pres_number'];
     $pres_ins = $_POST['pres_ins'];
-    $pres_pat_ailment = $_POST['pres_pat_ailment'];
+    $prescribed_by = $_POST['prescribed_by'];
     //sql to insert captured values
-    $query = "INSERT INTO  prescriptions  (pres_pat_name, pres_pat_number, pres_pat_type, pres_pat_addr, pres_pat_age, pres_number, pres_pat_ailment, pres_ins) VALUES(?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO  prescriptions  (pres_pat_name, pres_pat_number, pres_pat_type, pres_pat_addr, pres_pat_age, pres_number, pres_pat_ailment, pres_ins,prescribed_by) VALUES(?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssss', $pres_pat_name, $pres_pat_number, $pres_pat_type, $pres_pat_addr, $pres_pat_age, $pres_number, $pres_pat_ailment, $pres_ins);
+    $rc = $stmt->bind_param('sssssssss', $pres_pat_name, $pres_pat_number, $pres_pat_type, $pres_pat_addr, $pres_pat_age, $pres_number, $pres_pat_ailment, $pres_ins, $prescribed_by);
     $stmt->execute();
     /*
 			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
@@ -144,7 +144,11 @@ if (isset($_POST['add_patient_presc'])) {
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Prescription</label>
-                                                <textarea required="required" type="text" class="form-control" name="pres_ins" id="editor"></textarea>
+                                                <textarea required="required" type="text" class="form-control" name="pres_ins" id="" rows="10"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputAddress" class="col-form-label">Prescribed by</label>
+                                                <textarea required="required" type="text" class="form-control" name="prescribed_by" id="" rows="1"></textarea>
                                             </div>
 
                                             <button type="submit" name="add_patient_presc" class="ladda-button btn btn-primary" data-style="expand-right">Add Patient Prescription</button>

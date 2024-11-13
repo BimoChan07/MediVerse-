@@ -11,10 +11,12 @@ if (isset($_POST['add_patient_mdr'])) {
     $mdr_number = $_POST['mdr_number'];
     $mdr_pat_prescr = $_POST['mdr_pat_prescr'];
     $mdr_pat_ailment = $_POST['mdr_pat_ailment'];
+    $mdr_remarks = $_POST['mdr_remarks'];
+    $mdr_rec_by = $_POST['mdr_rec_by'];
     //sql to insert captured values
-    $query = "INSERT INTO  medical_records  (mdr_pat_name, mdr_pat_number, mdr_pat_adr, mdr_pat_age, mdr_number, mdr_pat_prescr, mdr_pat_ailment) VALUES(?,?,?,?,?,?,?)";
+    $query = "INSERT INTO  medical_records  (mdr_pat_name, mdr_pat_number, mdr_pat_adr, mdr_pat_age, mdr_number, mdr_pat_prescr, mdr_pat_ailment, mdr_remarks,mdr_rec_by) VALUES(?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssssss', $mdr_pat_name, $mdr_pat_number, $mdr_pat_adr, $mdr_pat_age, $mdr_number, $mdr_pat_prescr, $mdr_pat_ailment);
+    $rc = $stmt->bind_param('sssssssss', $mdr_pat_name, $mdr_pat_number, $mdr_pat_adr, $mdr_pat_age, $mdr_number, $mdr_pat_prescr, $mdr_pat_ailment, $mdr_remarks, $mdr_rec_by);
     $stmt->execute();
     /*
 			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
@@ -149,10 +151,19 @@ if (isset($_POST['add_patient_mdr'])) {
                                         ?>
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Patient's Prescription</label>
-                                                <textarea required="required" type="text" class="form-control" name="mdr_pat_prescr" id="editor"><?php echo $row->pres_ins; ?> </textarea>
+                                                <textarea required="required" type="text" class="form-control" name="mdr_pat_prescr" id=""><?php echo $row->pres_ins; ?> </textarea>
                                             </div>
                                         <?php } ?>
+                                        <div class="form-group">
+                                            <label for="inputAddress" class="col-form-label">Remarks</label>
+                                            <textarea required="required" type="text" class="form-control" name="mdr_remarks" id="" rows="10"></textarea>
+                                        </div>
 
+
+                                        <div class="form-group mt-3">
+                                            <label for="inputAddress" class="col-form-label">Recorded by:</label>
+                                            <textarea required="required" type="text" class="form-control" name="mdr_rec_by" id="" rows="2"></textarea>
+                                        </div>
                                         <button type="submit" name="add_patient_mdr" class="ladda-button btn btn-primary" data-style="expand-right">Add Patient Medical Record</button>
 
                                         </form>
