@@ -18,19 +18,10 @@ $doc_id = $_SESSION['doc_id'];
     <!-- Begin page -->
     <div id="wrapper">
 
-        <!-- Topbar Start -->
         <?php include("assets/inc/nav.php"); ?>
-        <!-- end Topbar -->
 
-        <!-- ========== Left Sidebar Start ========== -->
         <?php include("assets/inc/sidebar.php"); ?>
-        <!-- Left Sidebar End -->
 
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-
-        <!--Get Details Of A Single User And Display Them Here-->
         <?php
         $pat_number = $_GET['pat_number'];
         $pat_id = $_GET['pat_id'];
@@ -154,6 +145,7 @@ $doc_id = $_SESSION['doc_id'];
                                                         <th>Heart Rate/Pulse</th>
                                                         <th>Respiratory Rate</th>
                                                         <th>Blood Pressure</th>
+                                                        <th>Remarks</th>
                                                         <th>Date Recorded</th>
                                                     </tr>
                                                 </thead>
@@ -176,6 +168,7 @@ $doc_id = $_SESSION['doc_id'];
                                                             <td><?php echo $row->vit_heartpulse; ?>BPM</td>
                                                             <td><?php echo $row->vit_resprate; ?>bpm</td>
                                                             <td><?php echo $row->vit_bloodpress; ?>mmHg</td>
+                                                            <td><?php echo $row->remarks; ?>mmHg</td>
                                                             <td><?php echo date("Y-m-d", strtotime($mysqlDateTime)); ?></td>
                                                         </tr>
                                                     </tbody>

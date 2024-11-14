@@ -115,10 +115,30 @@ if (isset($_POST['add_patient'])) {
                                                 <label for="inputCity" class="col-form-label">Mobile Number</label>
                                                 <input required="required" type="text" name="pat_phone" class="form-control" id="inputCity">
                                             </div>
-                                            <div class="form-group col-md-4">
+                                            <!-- <div class="form-group col-md-4">
                                                 <label for="inputCity" class="col-form-label">Patient Ailment</label>
                                                 <input required="required" type="text" name="pat_ailment" class="form-control" id="inputCity">
+                                            </div> -->
+                                            <div class="form-group col-md-4">
+                                                <label for="inputCity" class="col-form-label">Patient Ailment</label>
+                                                <select required="required" name="pat_ailment" class="form-control" id="inputCity">
+                                                    <option value="">Select Ailment</option>
+                                                    <?php
+                                                    // Fetch ailments from the database
+                                                    include('assets/inc/config.php');
+
+                                                    // Query to get all ailment names
+                                                    $query = "SELECT ailment_name FROM ailments";
+                                                    $result = $mysqli->query($query);
+
+                                                    // Loop through the results and create an option for each ailment
+                                                    while ($row = $result->fetch_object()) {
+                                                        echo "<option value='" . $row->ailment_name . "'>" . $row->ailment_name . "</option>";
+                                                    }
+                                                    ?>
+                                                </select>
                                             </div>
+
                                             <div class="form-group col-md-4">
                                                 <label for="inputState" class="col-form-label">Patient's Type</label>
                                                 <select id="inputState" required="required" name="pat_type" class="form-control">

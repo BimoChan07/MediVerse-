@@ -1,39 +1,33 @@
 <?php
 session_start();
 include('assets/inc/config.php');
+
 if (isset($_POST['add_patient_lab_test'])) {
     $lab_pat_name = $_POST['lab_pat_name'];
     $lab_pat_ailment = $_POST['lab_pat_ailment'];
-    $lab_pat_number  = $_POST['lab_pat_number'];
+    $lab_pat_number = $_POST['lab_pat_number'];
     $lab_pat_tests = $_POST['lab_pat_tests'];
-    $lab_number  = $_POST['lab_number'];
-    $reported_by  = $_POST['reported_by'];
-    //$pres_number = $_POST['pres_number'];
-    //$pres_ins = $_POST['pres_ins'];
-    //$pres_pat_ailment = $_POST['pres_pat_ailment'];
-    //sql to insert captured values
-    $query = "INSERT INTO  laboratory  (lab_pat_name, lab_pat_ailment, lab_pat_number, lab_pat_tests, lab_number, reported_by ) VALUES(?,?,?,?,?,?)";
+    $lab_number = $_POST['lab_number'];
+    $reported_by = $_POST['reported_by'];
+
+    // SQL to insert captured values
+    $query = "INSERT INTO laboratory (lab_pat_name, lab_pat_ailment, lab_pat_number, lab_pat_tests, lab_number, reported_by) VALUES(?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssss', $lab_pat_name, $lab_pat_ailment, $lab_pat_number, $lab_pat_tests, $lab_number, $reported_by);
+    $stmt->bind_param('ssssss', $lab_pat_name, $lab_pat_ailment, $lab_pat_number, $lab_pat_tests, $lab_number, $reported_by);
     $stmt->execute();
-    /*
-			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
-			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
-			*/
-    //declare a varible which will be passed to alert function
+
     if ($stmt) {
-        $success = "Patient Laboratory Tests Addded";
+        $success = "Patient Laboratory Tests Added";
     } else {
         $err = "Please Try Again Or Try Later";
     }
 }
 ?>
-<!--End Server Side-->
-<!--End Patient Registration-->
+
 <!DOCTYPE html>
 <html lang="en">
 
-<!--Head-->
+<!-- Head -->
 <?php include('assets/inc/head.php'); ?>
 
 <body>
@@ -45,7 +39,7 @@ if (isset($_POST['add_patient_lab_test'])) {
         <?php include("assets/inc/nav.php"); ?>
         <!-- end Topbar -->
 
-        <!-- ========== Left Sidebar Start ========== -->
+        <!-- Left Sidebar Start -->
         <?php include("assets/inc/sidebar.php"); ?>
         <!-- Left Sidebar End -->
 
@@ -54,17 +48,16 @@ if (isset($_POST['add_patient_lab_test'])) {
         <!-- ============================================================== -->
         <?php
         $pat_number = $_GET['pat_number'];
-        $ret = "SELECT  * FROM patients WHERE pat_number=?";
+        $ret = "SELECT * FROM patients WHERE pat_number=?";
         $stmt = $mysqli->prepare($ret);
         $stmt->bind_param('s', $pat_number);
-        $stmt->execute(); //ok
+        $stmt->execute();
         $res = $stmt->get_result();
-        //$cnt=1;
         while ($row = $res->fetch_object()) {
         ?>
+
             <div class="content-page">
                 <div class="content">
-
                     <!-- Start Content-->
                     <div class="container-fluid">
 
@@ -84,16 +77,16 @@ if (isset($_POST['add_patient_lab_test'])) {
                             </div>
                         </div>
                         <!-- end page title -->
+
                         <!-- Form row -->
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="header-title">Fill all fields</h4>
-                                        <!--Add Patient Form-->
+                                        <!-- Add Patient Form -->
                                         <form method="post">
                                             <div class="form-row">
-
                                                 <div class="form-group col-md-6">
                                                     <label for="inputEmail4" class="col-form-label">Patient Name</label>
                                                     <input type="text" required="required" readonly name="lab_pat_name" value="<?php echo $row->pat_fname; ?> <?php echo $row->pat_lname; ?>" class="form-control" id="inputEmail4" placeholder="Patient's First Name">
@@ -101,26 +94,18 @@ if (isset($_POST['add_patient_lab_test'])) {
 
                                                 <div class="form-group col-md-6">
                                                     <label for="inputPassword4" class="col-form-label">Patient Ailment</label>
-                                                    <input required="required" type="text" readonly name="lab_pat_ailment" value="<?php echo $row->pat_ailment; ?>" class="form-control" id="inputPassword4" placeholder="Patient`s Last Name">
+                                                    <input required="required" type="text" readonly name="lab_pat_ailment" value="<?php echo $row->pat_ailment; ?>" class="form-control" id="inputPassword4" placeholder="Patient's Ailment">
                                                 </div>
-
                                             </div>
 
                                             <div class="form-row">
-
                                                 <div class="form-group col-md-12">
                                                     <label for="inputEmail4" class="col-form-label">Patient Number</label>
-                                                    <input type="text" required="required" readonly name="lab_pat_number" value="<?php echo $row->pat_number; ?>" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
+                                                    <input type="text" required="required" readonly name="lab_pat_number" value="<?php echo $row->pat_number; ?>" class="form-control" id="inputEmail4" placeholder="Patient Number">
                                                 </div>
-
-
                                             </div>
 
-
-                                            <hr>
                                             <div class="form-row">
-
-
                                                 <div class="form-group col-md-2" style="display:none">
                                                     <?php
                                                     $length = 5;
@@ -135,14 +120,20 @@ if (isset($_POST['add_patient_lab_test'])) {
                                                 <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
                                                 <textarea required="required" type="text" class="form-control" name="lab_pat_tests" rows="5"></textarea>
                                             </div>
+
+                                            <button type="button" name="recommend_tests" class="btn btn-secondary">
+                                                Recommend Tests
+                                            </button>
+
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Reported By</label>
                                                 <textarea required="required" type="text" class="form-control" name="reported_by" id="" rows="1"></textarea>
                                             </div>
+
                                             <button type="submit" name="add_patient_lab_test" class="ladda-button btn btn-success" data-style="expand-right">Add Laboratory Test</button>
 
                                         </form>
-                                        <!--End Patient Form-->
+                                        <!-- End Patient Form -->
                                     </div> <!-- end card-body -->
                                 </div> <!-- end card-->
                             </div> <!-- end col -->
@@ -150,7 +141,6 @@ if (isset($_POST['add_patient_lab_test'])) {
                         <!-- end row -->
 
                     </div> <!-- container -->
-
                 </div> <!-- content -->
 
                 <!-- Footer Start -->
@@ -160,20 +150,16 @@ if (isset($_POST['add_patient_lab_test'])) {
             </div>
         <?php } ?>
 
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
 
 
     </div>
     <!-- END wrapper -->
 
-
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
     <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
     <script type="text/javascript">
-        CKEDITOR.replace('editor')
+        CKEDITOR.replace('editor');
     </script>
 
     <!-- Vendor js -->
@@ -188,6 +174,35 @@ if (isset($_POST['add_patient_lab_test'])) {
 
     <!-- Buttons init js-->
     <script src="assets/js/pages/loading-btn.init.js"></script>
+
+
+    <script type="text/javascript">
+        // Add your JavaScript for the "Recommend Tests" button functionality
+        document.querySelector('button[name="recommend_tests"]').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var ailment = document.querySelector('input[name="lab_pat_ailment"]').value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'get_tests.php?ailment=' + encodeURIComponent(ailment), true);
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+
+                    if (response.success) {
+                        document.querySelector('textarea[name="lab_pat_tests"]').value = response.lab_tests;
+                    } else {
+                        alert('No recommendations available for this ailment');
+                    }
+                } else {
+                    alert('Error fetching test recommendations');
+                }
+            };
+            xhr.send();
+        });
+    </script>
+
+
 
 </body>
 
