@@ -92,7 +92,7 @@ $doc_id = $_SESSION['doc_id'];
                                                 *get details of allpatients
                                                 *
                                             */
-                                        $ret = "SELECT * FROM  patients ORDER BY RAND() ";
+                                        $ret = "SELECT * FROM  patients ORDER BY pat_date_joined DESC ";
                                         //sql code to get to ten docs  randomly
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok

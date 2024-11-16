@@ -53,114 +53,183 @@ if (isset($_POST['add_patient_lab_test'])) {
         $stmt->bind_param('s', $pat_number);
         $stmt->execute();
         $res = $stmt->get_result();
+
+    
+        
         while ($row = $res->fetch_object()) {
+            // Assuming you've fetched $pat_symptoms from the database
+            $pat_symptoms_json = $row->pat_symptoms; // Assuming $row contains the fetched data
+
+            // Decode the JSON string back into an array
+            $pat_symptoms = json_decode($pat_symptoms_json, true);
+echo $pat_symptoms_json;
+            // Check if symptoms exist and display them
+
+
         ?>
+        <script>
+        // Pass PHP data to JavaScript
+        const patientData = <?php echo $data_encode; ?>;
 
-            <div class="content-page">
-                <div class="content">
-                    <!-- Start Content-->
-                    <div class="container-fluid">
+        // Log the data in the browser console
+        console.log("Patient Data:", patientData);
+        </script>
+        <div class="content-page">
+            <div class="content">
+                <!-- Start Content-->
+                <div class="container-fluid">
 
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
-                                            <li class="breadcrumb-item active">Add Lab Test</li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Add Lab Test</h4>
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
+                                        <li class="breadcrumb-item active">Add Lab Test</li>
+                                    </ol>
                                 </div>
+                                <h4 class="page-title">Add Lab Test</h4>
                             </div>
                         </div>
-                        <!-- end page title -->
+                    </div>
+                    <!-- end page title -->
 
-                        <!-- Form row -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Fill all fields</h4>
-                                        <!-- Add Patient Form -->
-                                        <form method="post">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="inputEmail4" class="col-form-label">Patient Name</label>
-                                                    <input type="text" required="required" readonly name="lab_pat_name" value="<?php echo $row->pat_fname; ?> <?php echo $row->pat_lname; ?>" class="form-control" id="inputEmail4" placeholder="Patient's First Name">
-                                                </div>
-
-                                                <div class="form-group col-md-6">
-                                                    <label for="inputPassword4" class="col-form-label">Patient Ailment</label>
-                                                    <input required="required" type="text" readonly name="lab_pat_ailment" value="<?php echo $row->pat_ailment; ?>" class="form-control" id="inputPassword4" placeholder="Patient's Ailment">
-                                                </div>
+                    <!-- Form row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="header-title">Fill all fields</h4>
+                                    <!-- Add Patient Form -->
+                                    <form method="post">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="col-form-label">Patient Name</label>
+                                                <input type="text" required="required" readonly name="lab_pat_name"
+                                                    value="<?php echo $row->pat_fname; ?> <?php echo $row->pat_lname; ?>"
+                                                    class="form-control" id="inputEmail4"
+                                                    placeholder="Patient's First Name">
                                             </div>
-
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="inputEmail4" class="col-form-label">Patient Number</label>
-                                                    <input type="text" required="required" readonly name="lab_pat_number" value="<?php echo $row->pat_number; ?>" class="form-control" id="inputEmail4" placeholder="Patient Number">
-                                                </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="col-form-label">Patient Number</label>
+                                                <input type="text" required="required" readonly name="lab_pat_number"
+                                                    value="<?php echo $row->pat_number; ?>" class="form-control"
+                                                    id="inputEmail4" placeholder="Patient Number">
                                             </div>
-
-                                            <div class="form-row">
-                                                <div class="form-group col-md-2" style="display:none">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputPassword4" class="col-form-label">Patient
+                                                    Ailment</label>
+                                                <input required="required" type="text" readonly name="lab_pat_ailment"
+                                                    value="<?php echo $row->pat_ailment; ?>" class="form-control"
+                                                    id="inputPassword4" placeholder="Patient's Ailment">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="inputPassword4" class="col-form-label">Patient's
+                                                    Symptoms</label>
+                                                <p class="mb-0" id="pat_symptoms" hidden>
                                                     <?php
+                                                        if (!empty($pat_symptoms)) {
+                                                            echo implode(', ', $pat_symptoms); // Join symptoms with commas
+                                                        } else {
+                                                            echo "No symptoms recorded for this patient.";
+                                                        }
+                                                        ?>
+                                                </p>
+                                                <p class="mb-0" id="pat">
+                                                    <?php
+                                                        if (!empty($pat_symptoms)) {
+                                                            // Convert the array of patient symptom IDs to a comma-separated list
+                                                            $symptom_ids = implode(',', array_map('intval', $pat_symptoms)); // Ensures IDs are integers
+
+                                                            // Query to fetch the symptom names from the symptoms table
+                                                            $query = "SELECT id, name FROM symptoms WHERE id IN ($symptom_ids)";
+                                                            $result = $mysqli->query($query);
+
+                                                            if ($result) {
+                                                                $symptom_names = []; // Array to store symptom names
+
+                                                                // Fetch the symptom names from the result
+                                                                while ($row = $result->fetch_assoc()) {
+                                                                    $symptom_names[] = $row['name'];
+                                                                }
+
+                                                                if (!empty($symptom_names)) {
+                                                                    // Render the symptom names, joined by commas
+                                                                    echo implode(', ', $symptom_names);
+                                                                } else {
+                                                                    echo "No matching symptoms found in the database.";
+                                                                }
+                                                            } else {
+                                                                // Handle query error
+                                                                echo "Error fetching symptoms: " . $mysqli->error;
+                                                            }
+                                                        } else {
+                                                            echo "No symptoms recorded for this patient.";
+                                                        }
+?>
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-2" style="display:none">
+                                                <?php
                                                     $length = 5;
                                                     $pres_no =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 1, $length);
                                                     ?>
-                                                    <label for="inputZip" class="col-form-label">Lab Test Number</label>
-                                                    <input type="text" name="lab_number" value="<?php echo $pres_no; ?>" class="form-control" id="inputZip">
-                                                </div>
+                                                <label for="inputZip" class="col-form-label">Lab Test Number</label>
+                                                <input type="text" name="lab_number" value="<?php echo $pres_no; ?>"
+                                                    class="form-control" id="inputZip">
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
-                                                <textarea required="required" type="text" class="form-control" name="lab_pat_tests" rows="5"></textarea>
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
+                                            <textarea required="required" type="text" class="form-control"
+                                                name="lab_pat_tests" rows="5"></textarea>
+                                        </div>
 
-                                            <button type="button" name="recommend_tests" class="btn btn-secondary">
-                                                Recommend Tests
-                                            </button>
+                                        <button type="button" name="recommend_tests" class="btn btn-secondary">
+                                            Recommend Tests
+                                        </button>
+                                        <div id="recommended_test_results"></div>
+                                        <div class="form-group">
+                                            <label for="inputAddress" class="col-form-label">Reported By</label>
+                                            <textarea required="required" type="text" class="form-control"
+                                                name="reported_by" id="" rows="1"></textarea>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label for="inputAddress" class="col-form-label">Reported By</label>
-                                                <textarea required="required" type="text" class="form-control" name="reported_by" id="" rows="1"></textarea>
-                                            </div>
+                                        <button type="submit" name="add_patient_lab_test"
+                                            class="ladda-button btn btn-success" data-style="expand-right">Add
+                                            Laboratory Test</button>
 
-                                            <button type="submit" name="add_patient_lab_test" class="ladda-button btn btn-success" data-style="expand-right">Add Laboratory Test</button>
+                                    </form>
+                                    <!-- End Patient Form -->
+                                </div> <!-- end card-body -->
+                            </div> <!-- end card-->
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->
 
-                                        </form>
-                                        <!-- End Patient Form -->
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
+                </div> <!-- container -->
+            </div> <!-- content -->
 
-                    </div> <!-- container -->
-                </div> <!-- content -->
+            <!-- Footer Start -->
+            <?php include('assets/inc/footer.php'); ?>
+            <!-- end Footer -->
 
-                <!-- Footer Start -->
-                <?php include('assets/inc/footer.php'); ?>
-                <!-- end Footer -->
-
-            </div>
+        </div>
         <?php } ?>
-
-
-
     </div>
     <!-- END wrapper -->
 
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
-    <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
-    <script type="text/javascript">
-        CKEDITOR.replace('editor');
-    </script>
+
 
     <!-- Vendor js -->
     <script src="assets/js/vendor.min.js"></script>
@@ -174,36 +243,71 @@ if (isset($_POST['add_patient_lab_test'])) {
 
     <!-- Buttons init js-->
     <script src="assets/js/pages/loading-btn.init.js"></script>
+    <script>
+    document.querySelector('button[name="recommend_tests"]').addEventListener('click', function(event) {
+        event.preventDefault();
 
+        var symptomText = document.getElementById('pat_symptoms').textContent.trim();
 
-    <script type="text/javascript">
-        // Add your JavaScript for the "Recommend Tests" button functionality
-        document.querySelector('button[name="recommend_tests"]').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent form submission
+        if (symptomText === "No symptoms recorded for this patient.") {
+            alert('No symptoms available for this patient.');
+            return;
+        }
 
-            var ailment = document.querySelector('input[name="lab_pat_ailment"]').value;
+        var symptoms = symptomText.split(',').map(symptom => symptom.trim());
+        if (symptoms.length === 0) {
+            alert('No symptoms available for this patient.');
+            return;
+        }
 
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'get_tests.php?ailment=' + encodeURIComponent(ailment), true);
-            xhr.onload = function() {
-                if (xhr.status == 200) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'get_tests.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onload = function() {
+            console.log('Server response:', xhr.responseText);
+
+            if (xhr.status === 200) {
+                try {
                     var response = JSON.parse(xhr.responseText);
-
                     if (response.success) {
-                        document.querySelector('textarea[name="lab_pat_tests"]').value = response.lab_tests;
+                        const recommendedTestResultDiv = document.getElementById(
+                            'recommended_test_results');
+
+                        // Clear any previous content
+                        recommendedTestResultDiv.innerHTML = '';
+
+                        // Create a list element to display the treatments
+                        const ul = document.createElement('ul');
+
+                        // Add each treatment as a list item
+                        response.treatments.forEach(treatment => {
+                            const li = document.createElement('li');
+                            li.textContent = treatment;
+                            ul.appendChild(li);
+                        });
+
+                        // Append the list to the div
+                        recommendedTestResultDiv.appendChild(ul);
                     } else {
-                        alert('No recommendations available for this ailment');
+                        alert(response.message || 'No recommendations available.');
                     }
-                } else {
-                    alert('Error fetching test recommendations');
+                } catch (e) {
+                    // alert('Error: Invalid response from server');
+                    console.error('Parsing error:', e);
                 }
-            };
-            xhr.send();
-        });
+            } else {
+                alert('Failed to fetch recommendations.');
+            }
+        };
+
+        xhr.onerror = function() {
+            alert('Request failed. Check your connection or server.');
+        };
+
+        xhr.send('symptoms=' + encodeURIComponent(JSON.stringify(symptoms)));
+    });
     </script>
-
-
-
 </body>
 
 </html>

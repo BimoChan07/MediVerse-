@@ -156,10 +156,6 @@
                             <a href="admin_pharm_inventory.php">Pharmaceuticals</a>
                         </li>
 
-                        <li>
-                            <a href="admin_equipments_inventory.php">Assets</a>
-                        </li>
-
                     </ul>
                 </li>
 
@@ -179,9 +175,9 @@
                         <li>
                             <a href="admin_employee_records.php">Doctor Records</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="admin_pharmaceutical_records.php">Pharmaceutical Records</a>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <a href="admin_accounting_records.php">Accounting Records</a>
                         </li> -->
