@@ -187,13 +187,13 @@ echo $pat_symptoms_json;
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
                                             <textarea required="required" type="text" class="form-control"
                                                 name="lab_pat_tests" rows="5"></textarea>
-                                        </div>
+                                        </div> -->
 
-                                        <button type="button" name="recommend_tests" class="btn btn-secondary">
+                                        <button type="button" name="recommend_tests" class="btn btn-secondary mb-2">
                                             Recommend Tests
                                         </button>
                                         <div id="recommended_test_results"></div>
